@@ -60,7 +60,8 @@ const InlineVideoPlayer = ({ src, poster, title }) => {
   const [volume, setVolume] = useState(0.8);
   const [muted, setMuted] = useState(false);
   const [showControls, setShowControls] = useState(true);
-  const [fullscreen, setFullscreen] = useState(false);
+//   const [fullscreen, setFullscreen] = useState(false);
+const [ setFullscreen] = useState(false);
   const containerRef = useRef(null);
   const hideTimer = useRef(null);
 
