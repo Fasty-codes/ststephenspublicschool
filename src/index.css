@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* This targets the entire scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+/* This targets the scrollbar track (the background) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* A light gray background */
+}
+
+/* This targets the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* A darker gray for the thumb */
+}
+
+/* This changes the thumb color on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* A slightly darker gray when the user hovers over it */
+}

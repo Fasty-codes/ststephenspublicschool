@@ -1,0 +1,106 @@
+/* ============================================================
+   ADMISSION PAGE — St. Stephen's Public School
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --navy:        #0d1b2e;
+  --gold:        #b8914a;
+  --ivory:       #f7f4ef;
+  --white:       #ffffff;
+  --text-body:   #3d4a5c;
+  --text-muted:  #6b7a8d;
+  --font-display:'Playfair Display', Georgia, serif;
+  --font-body:   'DM Sans', system-ui, sans-serif;
+  --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-lg:   0 16px 48px rgba(13,27,46,0.18);
+  --radius:      6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.admission-page {
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Page heading (if needed) */
+.admission-page > *:not(header):not(footer):first-of-type {
+  padding-top: 2rem;
+}
+
+.iframe-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3rem 2rem;
+  gap: 1.5rem;
+}
+
+.iframe-container::before {
+  content: 'Admission Application';
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  color: var(--navy);
+  font-weight: 700;
+  text-align: center;
+}
+
+.iframe-container::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-top: -1rem;
+}
+
+.admission-iframe {
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-lg) !important;
+  width: 100%;
+  max-width: 960px;
+  height: 640px;
+  background: var(--white);
+}
+
+.admission-p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0 1rem 2.5rem;
+  line-height: 1.7;
+}
+
+.admission-link {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+  transition: color 0.2s var(--ease);
+}
+
+.admission-link:hover { color: var(--gold); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .admission-iframe {
+    height: 560px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admission-iframe {
+    height: 480px;
+  }
+}

@@ -1,0 +1,797 @@
+/* ============================================================
+   ACADEMICS PAGE — St. Stephen's Public School (Blue & Gold Theme)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --navy: #0d1b2e;
+  --navy-mid: #1a2f4a;
+  --navy-light: #243d5c;
+  --blue-primary: #1e3c72;
+  --blue-mid: #2a5298;
+  --blue-light: #3b6cb5;
+  --blue-pale: #e8f0fe;
+  --blue-bg: #f0f4fa;
+  --gold: #c9a44c;
+  --gold-light: #d4b76a;
+  --gold-dark: #a8873a;
+  --ivory: #f7f9fc;
+  --ivory-dark: #edf1f7;
+  --white: #ffffff;
+  --text-body: #3d4a5c;
+  --text-muted: #6b7a8d;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-sm: 0 2px 8px rgba(30, 60, 114, 0.08);
+  --shadow-md: 0 8px 32px rgba(30, 60, 114, 0.14);
+  --shadow-lg: 0 16px 48px rgba(30, 60, 114, 0.2);
+  --radius: 8px;
+  --radius-lg: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.academics-page {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  overflow-x: hidden;
+  background: var(--blue-bg);
+}
+
+/* ════════════════════════════════════════
+   HERO SECTION
+════════════════════════════════════════ */
+.acad-hero {
+  position: relative;
+  height: 55vh;
+  min-height: 400px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b6cb5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.acad-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(201, 164, 76, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(201, 164, 76, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.acad-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+}
+
+.acad-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30,60,114,0.3) 0%, rgba(42,82,152,0.5) 100%);
+  pointer-events: none;
+}
+
+.acad-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.acad-hero-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(201, 164, 76, 0.4);
+  border-radius: 50px;
+  background: rgba(201, 164, 76, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.acad-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.acad-hero-sub {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ════════════════════════════════════════
+   MAIN CONTENT
+════════════════════════════════════════ */
+.acad-main {
+  padding: 4rem 2rem;
+  background: var(--blue-bg);
+  min-height: 60vh;
+}
+
+.acad-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tab Navigation */
+.acad-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  background: var(--white);
+  padding: 0.8rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(42, 82, 152, 0.1);
+}
+
+.acad-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  white-space: nowrap;
+}
+
+.acad-tab:hover {
+  color: var(--blue-primary);
+  background: var(--blue-pale);
+  transform: translateY(-2px);
+}
+
+.acad-tab.active {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid));
+  border-color: var(--blue-primary);
+  box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3);
+}
+
+.acad-tab.active .acad-tab-icon {
+  color: var(--gold-light);
+}
+
+.acad-tab-icon {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  color: var(--blue-mid);
+}
+
+/* Content Section */
+.acad-content {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  animation: contentFadeIn 0.5s var(--ease);
+  border: 1px solid rgba(42, 82, 152, 0.08);
+}
+
+@keyframes contentFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.acad-content-header {
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-mid) 100%);
+  border-bottom: 3px solid var(--gold);
+}
+
+.acad-content-info {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.acad-content-icon {
+  font-size: 2rem;
+  color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.15);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.acad-content-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.acad-content-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.05em;
+}
+
+.acad-content-body {
+  padding: 2.5rem;
+}
+
+.acad-description {
+  margin-bottom: 2rem;
+}
+
+.acad-description p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-body);
+}
+
+.acad-highlights,
+.acad-subjects,
+.acad-streams,
+.acad-schedule,
+.acad-terms,
+.acad-activities {
+  margin-bottom: 2rem;
+}
+
+.acad-highlights h3,
+.acad-subjects h3,
+.acad-streams h3,
+.acad-schedule h3,
+.acad-terms h3,
+.acad-activities h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.acad-highlights h3::after,
+.acad-subjects h3::after,
+.acad-streams h3::after,
+.acad-schedule h3::after,
+.acad-terms h3::after,
+.acad-activities h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-mid), var(--gold));
+  border-radius: 2px;
+}
+
+.acad-highlight-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.8rem;
+}
+
+.acad-highlight-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  background: var(--blue-pale);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  transition: all 0.25s var(--ease);
+  border-left: 3px solid var(--blue-mid);
+}
+
+.acad-highlight-list li:hover {
+  background: #d8e4f8;
+  transform: translateX(5px);
+  border-left-color: var(--gold);
+}
+
+.acad-check-icon {
+  color: var(--blue-mid);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Subjects Grid */
+.acad-subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.acad-subject-card {
+  background: var(--blue-pale);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border-left: 4px solid var(--blue-mid);
+  transition: all 0.3s var(--ease);
+}
+
+.acad-subject-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-left-color: var(--gold);
+}
+
+.acad-subject-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  margin-bottom: 0.8rem;
+}
+
+.acad-subject-card ul {
+  list-style: none;
+}
+
+.acad-subject-card li {
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+  color: var(--text-body);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.acad-subject-card li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--blue-mid);
+}
+
+/* Streams Grid */
+.acad-streams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.acad-stream-card {
+  background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-mid) 100%);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  color: var(--white);
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.acad-stream-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 150px;
+  height: 150px;
+  background: rgba(201, 164, 76, 0.15);
+  border-radius: 50%;
+  transition: all 0.5s var(--ease);
+}
+
+.acad-stream-card:hover::before {
+  transform: scale(2);
+}
+
+.acad-stream-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.acad-stream-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.acad-stream-card ul {
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+
+.acad-stream-card li {
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Schedule Table */
+.acad-schedule-table {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.acad-schedule-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+}
+
+.acad-schedule-table th {
+  background: var(--blue-primary);
+  color: var(--white);
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.acad-schedule-table td {
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--ivory-dark);
+}
+
+.acad-schedule-table tr:hover td {
+  background: var(--blue-pale);
+}
+
+/* Terms Grid */
+.acad-terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.acad-term-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(42, 82, 152, 0.15);
+}
+
+.acad-term-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue-mid), var(--gold));
+}
+
+.acad-term-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--blue-mid);
+}
+
+.acad-term-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  margin-bottom: 0.5rem;
+}
+
+.acad-term-period {
+  font-size: 0.85rem;
+  color: var(--blue-mid);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.acad-term-events {
+  list-style: none;
+}
+
+.acad-term-events li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  font-size: 0.88rem;
+  color: var(--text-body);
+}
+
+.acad-event-icon {
+  color: var(--gold);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Activities Grid */
+.acad-activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+}
+
+.acad-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  background: var(--blue-pale);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  transition: all 0.25s var(--ease);
+  border-left: 3px solid var(--blue-light);
+}
+
+.acad-activity-item:hover {
+  background: #d8e4f8;
+  transform: translateX(5px);
+  border-left-color: var(--gold);
+}
+
+.acad-activity-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--blue-mid);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* CTA Buttons */
+.acad-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--ivory-dark);
+}
+
+.acad-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid));
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease);
+  box-shadow: 0 4px 16px rgba(30, 60, 114, 0.4);
+}
+
+.acad-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(30, 60, 114, 0.6);
+  background: linear-gradient(135deg, var(--blue-mid), var(--blue-light));
+}
+
+.acad-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--blue-primary);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 2px solid var(--blue-primary);
+  transition: all 0.3s var(--ease);
+}
+
+.acad-cta-secondary:hover {
+  background: var(--blue-primary);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* Quick Links */
+.acad-quick-links {
+  padding: 4rem 2rem;
+  background: var(--white);
+}
+
+.acad-quick-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.acad-quick-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-mid), var(--gold));
+  margin: 0.7rem auto 0;
+  border-radius: 2px;
+}
+
+.acad-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.acad-quick-card {
+  text-align: center;
+  padding: 2rem;
+  background: var(--blue-bg);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  border: 1px solid transparent;
+}
+
+.acad-quick-card:hover {
+  background: var(--white);
+  border-color: var(--blue-mid);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+}
+
+.acad-quick-icon {
+  font-size: 2rem;
+  color: var(--blue-mid);
+  margin-bottom: 1rem;
+}
+
+.acad-quick-card:hover .acad-quick-icon {
+  color: var(--gold);
+}
+
+.acad-quick-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  margin-bottom: 0.5rem;
+}
+
+.acad-quick-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .acad-main {
+    padding: 2rem 1rem;
+  }
+  
+  .acad-hero {
+    height: 45vh;
+    min-height: 350px;
+  }
+  
+  .acad-content-body {
+    padding: 1.5rem;
+  }
+  
+  .acad-content-header {
+    padding: 1.5rem;
+  }
+  
+  .acad-content-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .acad-content-title {
+    font-size: 1.5rem;
+  }
+  
+  .acad-tabs {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .acad-tab {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .acad-highlight-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .acad-subjects-grid,
+  .acad-streams-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .acad-cta {
+    flex-direction: column;
+  }
+  
+  .acad-cta-btn,
+  .acad-cta-secondary {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .acad-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .acad-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .acad-hero-sub {
+    font-size: 0.9rem;
+  }
+  
+  .acad-content-body {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
